@@ -8,8 +8,9 @@
 
    <context:component-scan base-package = "com.test.mvc.controller" />
 
-<bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
-<bean name="/welcome.html" class="com.test.mvc.controller.HelloController"/>
+<!-- Not Required in case of annotation based config -->
+<!-- <bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+<bean name="/welcome.html" class="com.test.mvc.controller.HelloController"/> -->
 
    <bean id="viewResolver" class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/WEB-INF/" />

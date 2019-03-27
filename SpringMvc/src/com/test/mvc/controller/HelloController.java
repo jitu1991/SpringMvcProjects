@@ -8,12 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-public class HelloController extends AbstractController {
+@Controller
+public class HelloController {// extends AbstractController {
 
-	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+	//@Override
+	@RequestMapping("/welcome")
+	protected ModelAndView welcome(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 		ModelAndView model = new ModelAndView("HelloPage");
-		model.addObject("welcomeMessage", "Hi User");
+		model.addObject("welcomeMessage", "Hi User, First annotation based config");
+		return model;
+	}
+	
+	@RequestMapping("/view")
+	protected ModelAndView view(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+		ModelAndView model = new ModelAndView("HelloPage");
+		model.addObject("msg", "Second message");
 		return model;
 	}
 
