@@ -3,7 +3,10 @@ package com.test.mvc.pojo;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Size;
+
 public class Student {
+	@Size(min=2, max=15, message="Enter value between {min} and {max}")
 	private String studentName;
 	private String country;
 	private Long mobile;
