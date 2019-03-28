@@ -6,7 +6,8 @@ import java.util.List;
 import javax.validation.constraints.Size;
 
 public class Student {
-	@Size(min=2, max=15, message="Enter value between {min} and {max}")
+	//@Size(min=2, max=15, message="Enter value between {min} and {max}")
+	@Size(min=2, max=15)
 	private String studentName;
 	private String country;
 	private Long mobile;
