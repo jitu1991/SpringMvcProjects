@@ -20,6 +20,7 @@ public class StudentAdmissionController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setDisallowedFields(new String[] {"mobile"});
+		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditor());
 	}
 	
 	@RequestMapping(value="/admission", method=RequestMethod.GET)
