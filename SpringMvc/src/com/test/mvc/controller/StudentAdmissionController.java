@@ -2,6 +2,7 @@ package com.test.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,8 +39,12 @@ public class StudentAdmissionController {
 	}*/
 	
 	@RequestMapping(value="/submit", method=RequestMethod.POST)
-	protected ModelAndView submit(@ModelAttribute Student student) {
+	protected ModelAndView submit(@ModelAttribute Student student, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("admissionSuccess");
+		if(result.hasErrors()) {
+			ModelAndView error = new ModelAndView("admissionForm");
+			return error;
+		}
 		modelAndView.addObject("msg", "College");
 		return modelAndView;
 	}
