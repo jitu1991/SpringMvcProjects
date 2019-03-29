@@ -25,5 +25,8 @@
    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
    <property name="basename" value="/WEB-INF/messages"/>
    </bean>
+   <mvc:interceptors>
+   		<bean class="com.test.mvc.controller.DayBasedAccessInterceptor"/>
+   </mvc:interceptors>
 
 </beans>
