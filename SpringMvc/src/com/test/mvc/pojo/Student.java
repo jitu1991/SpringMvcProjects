@@ -8,11 +8,14 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.test.mvc.controller.IsValidCountry;
+
 public class Student {
 	//@Size(min=2, max=15, message="Enter value between {min} and {max}")
 	@Size(min=2, max=15)
 	@Pattern(regexp="[^0-9]*")
 	private String studentName;
+	@IsValidCountry
 	private String country;
 	@Max(2222)
 	private Long mobile;
