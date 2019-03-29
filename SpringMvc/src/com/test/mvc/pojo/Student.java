@@ -3,14 +3,20 @@ package com.test.mvc.pojo;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Student {
 	//@Size(min=2, max=15, message="Enter value between {min} and {max}")
 	@Size(min=2, max=15)
+	@Pattern(regexp="[^0-9]*")
 	private String studentName;
 	private String country;
+	@Max(2222)
 	private Long mobile;
+	@Past
 	private Date dob;
 	private List<String> skills;
 	private Address address;
