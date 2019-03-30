@@ -26,7 +26,11 @@
    <property name="basename" value="/WEB-INF/messages"/>
    </bean>
    <mvc:interceptors>
+   <mvc:interceptor>
+   <!-- This interceptor will be called only for this url pattern -->
+   		<mvc:mapping path="/admission"/>
    		<bean class="com.test.mvc.controller.DayBasedAccessInterceptor"/>
+   </mvc:interceptor>
    </mvc:interceptors>
 
 </beans>
